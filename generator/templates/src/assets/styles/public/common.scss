@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+@for $i from 1 through 30 {
+
+  /**
+    * 字号
+    */
+  .fs#{$i} {
+    font-size: #{$i}px;
+  }
+
+  /**
+    * 圆角
+    */
+  .br#{$i} {
+    border-radius: #{$i}px;
+  }
+
+  /**
+    * 行高
+    */
+  .l-h#{$i} {
+    line-height: #{$i}px;
+  }
+}
+
+@for $i from 1 through 40 {
+
+  /**
+    * 外边距
+    */
+  .margin#{$i} {
+    margin: #{$i}px;
+  }
+
+  /**
+    * 内边距
+    */
+  .padding#{$i} {
+    padding: #{$i}px;
+  }
+
+  /**
+    * 左外边距
+    */
+  .ml#{$i} {
+    margin-left: #{$i}px;
+  }
+
+  /**
+    * 右外边距
+    */
+  .mr#{$i} {
+    margin-right: #{$i}px;
+  }
+
+  /**
+    * 上外边距
+    */
+  .mt#{$i} {
+    margin-top: #{$i}px;
+  }
+
+  /**
+    * 下外边距
+    */
+  .mb#{$i} {
+    margin-bottom: #{$i}px;
+  }
+
+  /**
+    * 左内边距
+    */
+  .pl#{$i} {
+    padding-left: #{$i}px;
+  }
+
+  /**
+    * 右内边距
+    */
+  .pr#{$i} {
+    padding-right: #{$i}px;
+  }
+
+  /**
+    * 上内边距
+    */
+  .pt#{$i} {
+    padding-top: #{$i}px;
+  }
+
+  /**
+    * 下内边距
+    */
+  .pb#{$i} {
+    padding-bottom: #{$i}px;
+  }
+}
+
+/**
+  * 文本居中
+  */
+
+.tc {
+  text-align: center;
+}
+
+/**
+  * 文本居左
+  */
+
+.tl {
+  text-align: left;
+}
+
+/**
+  * 文本居右
+  */
+
+.tr {
+  text-align: right;
+}
+
+/**
+  * 左浮动
+  */
+
+.fl {
+  float: left;
+}
+
+/**
+  * 右浮动
+  */
+
+.fr {
+  float: right;
+}
+
+/**
+  * 清除浮动
+  */
+
+.cl-both {
+  clear: both;
+}
+
+/**
+  * 文本粗体
+  */
+
+.fw-b {
+  font-weight: bold;
+}
+
+/**
+  * 绝对定位
+  */
+
+.absolute {
+  position: absolute;
+}
+
+/**
+  * 相对定位
+  */
+
+.relative {
+  position: relative;
+}
+
+/**
+  * 相对窗口的固定定位
+  */
+
+.fixed {
+  position: fixed;
+}
+
+/**
+  * 文本缩进两个字符
+  */
+
+.text2 {
+  text-indent: 2em;
+}
+
+/**
+  * 强制文本不换行
+  */
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+/**
+  * 单行文本超出显示省略号
+  */
+
+.text-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/**
+  * 多行文本超出显示省略号
+  */
+.text-hidden-en {
+  /**
+    * 如果你标签内的是英文，英文是不会自动换行的，该样式必须添加
+    */
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@for $i from 1 through 5 {
+
+  .text-hidden#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: #{$i};
+    -webkit-box-orient: vertical;
+  }
+
+}

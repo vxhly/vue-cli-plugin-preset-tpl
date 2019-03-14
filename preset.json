@@ -11,8 +11,8 @@
     },
     "@vue/cli-plugin-unit-mocha": {},
     "@vue/cli-plugin-e2e-cypress": {},
-    "vue-cli-plugin-preset-tpl": {
-      "replaceTemplates": true
+    "vue-cli-plugin-element": {
+      "prompts": true
     }
   },
   "router": true,
