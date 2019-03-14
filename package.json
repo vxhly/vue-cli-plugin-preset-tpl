@@ -1,0 +1,25 @@
+{
+  "name": "vue-cli-plugin-preset-tpl",
+  "version": "0.1.0",
+  "description": "Preset templates for Vue CLI 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vxhly/vue-cli-plugin-preset-tpl.git"
+  },
+  "keywords": [
+    "vue-cli3",
+    "preset",
+    "templates",
+    "vue"
+  ],
+  "author": "vxhly <pengchengou@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vxhly/vue-cli-plugin-preset-tpl/issues"
+  },
+  "homepage": "https://github.com/vxhly/vue-cli-plugin-preset-tpl#readme"
+}
