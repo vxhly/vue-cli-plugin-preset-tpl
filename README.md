@@ -59,7 +59,7 @@
 ```bash
 vue create my-app
 cd my-app
-vue add custom-tpl
+vue add preset-tpl
 ```
 
 或者可以直接这样安装（推荐）
