@@ -17,6 +17,7 @@
 - cli-plugin-e2e-cypress 端对端测试
 - ElementUI
 - [git commit 规范](https://vxhly.github.io/archives/fdd4f330.html)
+- 构建时开启 gzip 压缩
 
 可配置添加功能模块
 
@@ -42,10 +43,7 @@
     "vue-cli-plugin-element": {
       "prompts": true
     },
-    "vue-cli-plugin-preset-tpl": {
-      "replaceTemplates": true,
-      "prompts": true
-    }
+    "vue-cli-plugin-preset-tpl": {}
   },
   "router": true,
   "routerHistoryMode": false,
@@ -112,4 +110,6 @@ vue create --preset vxhly/vue-cli-plugin-preset-tpl my-app
 
 ## 其他
 
-> 灵感来源 => [vue-cli-plugin-custom-tpl](https://github.com/natee/vue-cli-plugin-custom-tpl)
+> 灵感来源1 => [vue-cli-plugin-custom-tpl](https://github.com/natee/vue-cli-plugin-custom-tpl)
+> 灵感来源2 => [vue-cli-plugin-element](https://github.com/ElementUI/vue-cli-plugin-element)
+> 灵感来源3 => [vue-cli-plugin-ant-design](https://github.com/vueComponent/vue-cli-plugin-ant-design)

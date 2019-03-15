@@ -1,14 +1,15 @@
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
-    'private':true,
+    'private': true,
     'dependencies': {
       '@babel/polyfill': '^7.2.5',
       'axios': '^0.18.0',
       'mockjs': '^1.0.1-beta3'
     },
     'devDependencies': {
-      'cz-conventional-changelog': '^2.1.0'
+      'cz-conventional-changelog': '^2.1.0',
+      'compression-webpack-plugin': '^2.0.0',
     },
     'scripts': {
       'changelog': 'conventional-changelog -p angular -i src/CHANGELOG.md -s -r 0'
