@@ -16,14 +16,5 @@ module.exports = [
     type: 'confirm',
     message: 'Use moment? ',
     default: false
-  },
-  // {
-  //   type: 'list',
-  //   name: 'UI',
-  //   message: 'Which UI framework do you want to introduce?',
-  //   choices: [
-  //     { name: 'Element UI', value: 'ElementUI' },
-  //   ],
-  //   default: 'ElementUI',
-  // }
+  }
 ]
