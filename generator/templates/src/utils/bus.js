@@ -28,7 +28,7 @@ bus.$off = (name) => {
 }
 bus.$emit = (name, params) => {
   // 需要声明数据来源和去向
-  if (!params || !params.from && !params.to) {
+  if (!params || (!params.from && !params.to)) {
     console.warn && console.warn('The paramter(from and to) is null')
   }
   _emit.call(bus, name, params)
