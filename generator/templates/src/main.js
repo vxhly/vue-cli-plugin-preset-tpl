@@ -7,8 +7,8 @@ Vue.config.productionTip = false
 
 import bus from '@/utils/bus'
 
-import '@/utils/filters'
-import '@/utils/directives'
+// import '@/utils/filters'
+// import '@/utils/directives'
 
 Vue.prototype.$bus = bus
 

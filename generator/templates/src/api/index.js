@@ -1,4 +1,4 @@
-import axios from './axios'
+import fetch from './fetch'
 
 /**
  * 使用方法
@@ -8,17 +8,17 @@ import axios from './axios'
 
 /**
  * http GET 方法
- * 
+ *
  * @method GET
  * @param {String} url RESTful URL
  * @param {Object} payload GET 的 body 参数
  */
-export function GET(url, payload) {
+export function GET (url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.get(url, {
-          params: payload
-        })
+      fetch.get(url, {
+        params: payload
+      })
         .then(response => {
           resolve(response.data)
         })
@@ -34,15 +34,15 @@ export function GET(url, payload) {
 
 /**
  * http PUT 方法
- * 
+ *
  * @method PUT
  * @param {String} url RESTful URL
  * @param {Object | Array} payload PUT 的 body 参数
  */
-export function PUT(url, payload) {
+export function PUT (url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.put(url, payload)
+      fetch.put(url, payload)
         .then(response => {
           resolve(response.data)
         })
@@ -58,15 +58,15 @@ export function PUT(url, payload) {
 
 /**
  * http PATCH 方法
- * 
+ *
  * @method PATCH
  * @param {String} url RESTful URL
  * @param {Object | Array} payload PATCH 的 body 参数
  */
-export function PATCH(url, payload) {
+export function PATCH (url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.patch(url, payload)
+      fetch.patch(url, payload)
         .then(response => {
           resolve(response.data)
         })
@@ -82,15 +82,15 @@ export function PATCH(url, payload) {
 
 /**
  * http POST 方法
- * 
+ *
  * @method POST
  * @param {String} url RESTful URL
  * @param {Object | Array} payload POST 的 body 参数
  */
-export function POST(url, payload) {
+export function POST (url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.post(url, payload)
+      fetch.post(url, payload)
         .then(response => {
           resolve(response.data)
         })
@@ -106,17 +106,17 @@ export function POST(url, payload) {
 
 /**
  * http DELETE 方法
- * 
+ *
  * @method DELETE
  * @param {String} url RESTful URL
  * @param {Object} payload DELETE 的 body 参数
  */
-export function DELETE(url, payload) {
+export function DELETE (url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.delete(url, {
-          data: payload
-        })
+      fetch.delete(url, {
+        data: payload
+      })
         .then(response => {
           resolve(response.data)
         })
@@ -131,19 +131,19 @@ export function DELETE(url, payload) {
 }
 
 export default {
-  GET(url, payload) {
+  GET (url, payload) {
     return GET(url, payload)
   },
-  PUT(url, payload) {
+  PUT (url, payload) {
     return PUT(url, payload)
   },
-  PATCH(url, payload) {
+  PATCH (url, payload) {
     return PATCH(url, payload)
   },
-  POST(url, payload) {
+  POST (url, payload) {
     return POST(url, payload)
   },
-  DELETE(url, payload) {
+  DELETE (url, payload) {
     return DELETE(url, payload)
   }
 }

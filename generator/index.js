@@ -3,7 +3,7 @@ module.exports = (api, options, rootOptions) => {
   api.extendPackage({
     'private': true,
     'dependencies': {
-      '@babel/polyfill': '^7.2.5',
+      '@babel/polyfill': '^7.4.0',
       'axios': '^0.18.0',
       'mockjs': '^1.0.1-beta3'
     },

@@ -2,7 +2,6 @@
 
 import Vue from 'vue'
 import moment from 'moment'
-import _ from 'lodash'
 /**
  * 时间格式化过滤器
  * 使用方法
@@ -98,6 +97,6 @@ Vue.filter('number2U', num => {
  */
 
 Vue.filter('json', (jsonStr, space = 2) => {
-  return _.isObject(jsonStr) || _.isArray(jsonStr)
+  return jsonStr instanceof Array || jsonStr instanceof Object
     ? JSON.stringify(jsonStr, null, space) : '不是正确的 JSON 字符串'
 })
