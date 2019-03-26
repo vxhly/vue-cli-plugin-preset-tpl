@@ -13,6 +13,9 @@
     "@vue/cli-plugin-e2e-cypress": {},
     "vue-cli-plugin-element": {
       "prompts": true
+    },
+    "vue-cli-plugin-preset-tpl": {
+      "replaceTemplates": true
     }
   },
   "router": true,

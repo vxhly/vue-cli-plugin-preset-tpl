@@ -1,9 +1,11 @@
 import axios from './axios'
 
-export function GET (url) {
+export function GET(url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.get(url)
+      axios.get(url, {
+          params: payload
+        })
         .then(response => {
           resolve(response.data)
         })
@@ -16,7 +18,7 @@ export function GET (url) {
   })
 }
 
-export function PUT (url, payload) {
+export function PUT(url, payload) {
   return new Promise((resolve, reject) => {
     try {
       axios.put(url, payload)
@@ -32,7 +34,7 @@ export function PUT (url, payload) {
   })
 }
 
-export function PATCH (url, payload) {
+export function PATCH(url, payload) {
   return new Promise((resolve, reject) => {
     try {
       axios.patch(url, payload)
@@ -48,7 +50,7 @@ export function PATCH (url, payload) {
   })
 }
 
-export function POST (url, payload) {
+export function POST(url, payload) {
   return new Promise((resolve, reject) => {
     try {
       axios.post(url, payload)
@@ -64,10 +66,12 @@ export function POST (url, payload) {
   })
 }
 
-export function DELETE (url, payload) {
+export function DELETE(url, payload) {
   return new Promise((resolve, reject) => {
     try {
-      axios.delete(url, { data: payload })
+      axios.delete(url, {
+          data: payload
+        })
         .then(response => {
           resolve(response.data)
         })
@@ -81,19 +85,19 @@ export function DELETE (url, payload) {
 }
 
 export default {
-  GET (url) {
-    return GET(url)
+  GET(url, payload) {
+    return GET(url, payload)
   },
-  PUT (url, payload) {
+  PUT(url, payload) {
     return PUT(url, payload)
   },
-  PATCH (url, payload) {
+  PATCH(url, payload) {
     return PATCH(url, payload)
   },
-  POST (url, payload) {
+  POST(url, payload) {
     return POST(url, payload)
   },
-  DELETE (url, payload) {
+  DELETE(url, payload) {
     return DELETE(url, payload)
   }
 }
