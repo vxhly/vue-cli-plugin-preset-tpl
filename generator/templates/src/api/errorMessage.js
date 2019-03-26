@@ -1,5 +1,5 @@
 /**
- * @exports apiErrorMessage interface's error message
+ * @exports apiErrorMessage 统一错误代码处理
  */
 
 const apiErrorMessage = {

@@ -1,3 +1,9 @@
+/**
+ * 组件之间的数据传递
+ * @param {String} componentName 组件名
+ * @param {String} eventName 事件名
+ * @param {String | Array | Object} params 需要传递的参数
+ */
 function broadcast (componentName, eventName, params) {
   this.$children.forEach(child => {
     var name = child.$options.componentName

@@ -1,5 +1,18 @@
 import axios from './axios'
 
+/**
+ * 使用方法
+ * import api from '@/api'
+ * api.GET(url).then().catch()
+ */
+
+/**
+ * http GET 方法
+ * 
+ * @method GET
+ * @param {String} url RESTful URL
+ * @param {Object} payload GET 的 body 参数
+ */
 export function GET(url, payload) {
   return new Promise((resolve, reject) => {
     try {
@@ -13,11 +26,19 @@ export function GET(url, payload) {
           reject(error)
         })
     } catch (err) {
+      if (err.response) throw Error(err.response.data.message)
       throw err
     }
   })
 }
 
+/**
+ * http PUT 方法
+ * 
+ * @method PUT
+ * @param {String} url RESTful URL
+ * @param {Object | Array} payload PUT 的 body 参数
+ */
 export function PUT(url, payload) {
   return new Promise((resolve, reject) => {
     try {
@@ -29,11 +50,19 @@ export function PUT(url, payload) {
           reject(error)
         })
     } catch (err) {
+      if (err.response) throw Error(err.response.data.message)
       throw err
     }
   })
 }
 
+/**
+ * http PATCH 方法
+ * 
+ * @method PATCH
+ * @param {String} url RESTful URL
+ * @param {Object | Array} payload PATCH 的 body 参数
+ */
 export function PATCH(url, payload) {
   return new Promise((resolve, reject) => {
     try {
@@ -45,11 +74,19 @@ export function PATCH(url, payload) {
           reject(error)
         })
     } catch (err) {
+      if (err.response) throw Error(err.response.data.message)
       throw err
     }
   })
 }
 
+/**
+ * http POST 方法
+ * 
+ * @method POST
+ * @param {String} url RESTful URL
+ * @param {Object | Array} payload POST 的 body 参数
+ */
 export function POST(url, payload) {
   return new Promise((resolve, reject) => {
     try {
@@ -61,11 +98,19 @@ export function POST(url, payload) {
           reject(error)
         })
     } catch (err) {
+      if (err.response) throw Error(err.response.data.message)
       throw err
     }
   })
 }
 
+/**
+ * http DELETE 方法
+ * 
+ * @method DELETE
+ * @param {String} url RESTful URL
+ * @param {Object} payload DELETE 的 body 参数
+ */
 export function DELETE(url, payload) {
   return new Promise((resolve, reject) => {
     try {
@@ -79,6 +124,7 @@ export function DELETE(url, payload) {
           reject(error)
         })
     } catch (err) {
+      if (err.response) throw Error(err.response.data.message)
       throw err
     }
   })
