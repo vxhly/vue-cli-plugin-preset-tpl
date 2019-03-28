@@ -22,9 +22,8 @@ RUN apt-get update \
 
 # 切换 node 的软件版本源
 RUN true \
-    && npm i -g nrm serve @vue/cli \
-    && nrm use taobao \
-    && npm i -g 
+    && npm i -g nrm serve @vue/cli --registry=http://registry.npm.taobao.org \
+    && nrm use taobao 
 
 # 创建工作目录
 RUN mkdir /workspace
