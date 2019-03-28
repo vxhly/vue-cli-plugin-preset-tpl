@@ -1,0 +1,11 @@
+version: '3'
+services:
+  dev:
+    image: vueimage:1.0
+    ports:
+     - "8080:8080" # 映射端口，将 docker 内的 8080 端口映射到本机的 8080 端口
+    restart: always # 每次开启 docker 的时候重启服务，适用于 MySQL、nginx 类似于这种的服务
+    volumes: 
+     - ./:/workspace # 将执行命令的目录映射到 docker 容器的 /workspace 目录
+    stdin_open: true # 命令行输入映射，不进行设置会导致无法正常进入 docker
+    tty: true # 使用TTY模式（pseudo-TTY）。若要使用Bash，则必须设置该选项。若不设置该选项，则可以输入命令，但不显示shell

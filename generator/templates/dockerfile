@@ -1,0 +1,37 @@
+FROM node:latest
+
+# system local config
+RUN true \
+    # debian china mirrors
+    && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
+    && sed -i 's/security.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
+    # timezone to china
+    && ln -sf /usr/share/zoneinfo/PRC /etc/localtime 
+
+RUN apt-get update \
+    && apt-get install -y \
+    # node-sass 等编译依赖
+    make gcc g++ python2.7 \
+    # 命令行工具
+    zsh curl wget vim git yarn
+
+# 切换 node 的软件版本源
+RUN true \
+    && npm i -g nrm serve @vue/cli \
+    && nrm use taobao \
+    && npm i -g 
+
+# 创建工作目录
+RUN mkdir /workspace
+
+WORKDIR /workspace
+
+# 添加权限，755 或者 a+x
+RUN chmod -R 755 /workspace
+
+VOLUME /workspace
+
+# 映射端口
+EXPOSE 8080
+
+CMD ["zsh"]
