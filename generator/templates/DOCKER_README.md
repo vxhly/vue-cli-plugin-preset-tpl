@@ -18,7 +18,7 @@ RUN apt-get update \
     # node-sass 等编译依赖
     make gcc g++ python2.7 \
     # 命令行工具
-    zsh curl wget vim git yarn xsel
+    zsh curl wget vim git git-flow yarn xsel
 
 # 切换 node 的软件版本源 => 切源工具 cgr 和 nrm
 # cgr 是基于nrm的改进版本，进行了一些优化，能同时管理 npm、yarn 源
@@ -29,7 +29,10 @@ RUN true \
     && cgr use taobao \
     && yarn global add serve @vue/cli @vue/cli-service-global \
                 commitizen conventional-changelog-cli eslint-plugin-vue \
-                npm-check-updates npx
+                npm-check-updates npx \
+    && npm i -g serve @vue/cli @vue/cli-service-global \
+                commitizen conventional-changelog-cli eslint-plugin-vue \
+                npm-check-updates npx 
 
 # 创建工作目录
 RUN mkdir /workspace
@@ -41,8 +44,7 @@ RUN chmod -R 755 /workspace
 
 VOLUME /workspace
 
-# 映射端口
-EXPOSE 8080
+EXPOSE 8080  
 EXPOSE 5000
 
 CMD ["zsh"]
