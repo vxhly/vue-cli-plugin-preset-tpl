@@ -18,7 +18,7 @@ RUN apt-get update \
     # node-sass 等编译依赖
     make gcc g++ python2.7 \
     # 命令行工具
-    zsh curl wget vim git yarn
+    zsh curl wget vim git yarn xsel
 
 # 切换 node 的软件版本源 => 切源工具 cgr 和 nrm
 # cgr 是基于nrm的改进版本，进行了一些优化，能同时管理 npm、yarn 源
@@ -43,6 +43,7 @@ VOLUME /workspace
 
 # 映射端口
 EXPOSE 8080
+EXPOSE 5000
 
 CMD ["zsh"]
 ```
@@ -55,10 +56,19 @@ services:
   dev:
     image: vueimage:1.0
     ports:
-     - "8080:8080" # 映射端口，将 docker 内的 8080 端口映射到本机的 8080 端口
+     - "8080:8080" # 映射端口，将本机的 8080 端口映射到 docker 的 8080 端口,npm run serve
     restart: always # 每次开启 docker 的时候重启服务，适用于 MySQL、nginx 类似于这种的服务
     volumes: 
      - ./:/workspace # 将执行命令的目录映射到 docker 容器的 /workspace 目录
+    stdin_open: true # 命令行输入映射，不进行设置会导致无法正常进入 docker
+    tty: true # 使用TTY模式（pseudo-TTY）。若要使用Bash，则必须设置该选项。若不设置该选项，则可以输入命令，但不显示shell
+  web:
+    image: vueimage:1.0
+    ports:
+    - "5000:5000" # 映射端口，将本机的 5000 端口映射到 docker 的 5000 端口,npm run build && serve dist\
+    restart: always # 每次开启 docker 的时候重启服务，适用于 MySQL、nginx 类似于这种的服务
+    volumes: 
+    - ./:/workspace # 将执行命令的目录映射到 docker 容器的 /workspace 目录
     stdin_open: true # 命令行输入映射，不进行设置会导致无法正常进入 docker
     tty: true # 使用TTY模式（pseudo-TTY）。若要使用Bash，则必须设置该选项。若不设置该选项，则可以输入命令，但不显示shell
 ```
@@ -109,6 +119,22 @@ module.exports = {
 ```
 
 到此已经全部配置完毕，重新 `yarn serve` 然后就可以愉快的写代码了
+
+# git commit
+
+现在由于我们在 docker 内部安装项目依赖，也就是说我们当前的环境变成了 liunx，相关的依赖包也就是 liunx 的依赖包，所以在 windows 环境下执行 `git commit` 的时候会报依赖找不到，那是因为安装了 liunx 的依赖包，两个平台的安装包是不一样的
+
+那么在 docker 下执行 `git commit` 的时候又会失败，因为 commit 的时候 git 需要知道当前的 commit 作者是谁，这时候不必全局配置 commit 的 config 信息，只需在项目目录下执行
+
+```bash
+git config   user.name 'XXX'
+git config   user.email 'XXX' 
+# or
+git config  --local  user.name 'XXX' 
+git config  --local user.email 'XXX' 
+```
+
+设置完用 `git config --list` 进行检验，之后的 commit 操作就在 docker 容器下执行就行了
 
 # 拓展
 
