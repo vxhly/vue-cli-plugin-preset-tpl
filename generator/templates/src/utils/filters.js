@@ -97,6 +97,6 @@ Vue.filter('number2U', num => {
  */
 
 Vue.filter('json', (jsonStr, space = 2) => {
-  return jsonStr instanceof Array || jsonStr instanceof Object
+  return jsonStr instanceof Object || jsonStr instanceof Array
     ? JSON.stringify(jsonStr, null, space) : '不是正确的 JSON 字符串'
 })

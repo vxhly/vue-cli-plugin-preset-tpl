@@ -16,7 +16,7 @@ RUN true \
 RUN apt-get update \
     && apt-get install -y \
     # node-sass 等编译依赖
-    make gcc g++ python2.7 \
+    make gcc g++ build-essential python2.7 \
     # 命令行工具
     zsh curl wget vim git git-flow yarn xsel
 

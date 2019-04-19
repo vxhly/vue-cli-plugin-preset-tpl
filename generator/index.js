@@ -5,7 +5,8 @@ module.exports = (api, options, rootOptions) => {
     'dependencies': {
       '@babel/polyfill': '^7.4.0',
       'axios': '^0.18.0',
-      'mockjs': '^1.0.1-beta3'
+      'mockjs': '^1.0.1-beta3',
+      'vue-echarts': '^4.0.1'
     },
     'devDependencies': {
       'cz-conventional-changelog': '^2.1.0',
