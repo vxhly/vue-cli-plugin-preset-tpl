@@ -13,7 +13,8 @@
       "prompts": true
     },
     "vue-cli-plugin-preset-tpl": {
-      "replaceTemplates": true
+      "replaceTemplates": true,
+      "lodash": true
     }
   },
   "router": true,

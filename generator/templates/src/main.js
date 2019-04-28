@@ -11,6 +11,7 @@ import bus from '@/utils/bus'
 // import '@/utils/directives'
 
 Vue.prototype.$bus = bus
+Vue.config.devtools = process.env.NODE_ENV === "development";
 
 new Vue({
   router,

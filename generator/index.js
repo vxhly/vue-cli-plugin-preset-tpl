@@ -1,9 +1,8 @@
 module.exports = (api, options, rootOptions) => {
   // 修改 `package.json` 里的字段
   api.extendPackage({
-    'private': true,
     'dependencies': {
-      '@babel/polyfill': '^7.4.0',
+      '@babel/polyfill': '^7.4.3',
       'axios': '^0.18.0',
       'mockjs': '^1.0.1-beta3',
       'vue-echarts': '^4.0.1'

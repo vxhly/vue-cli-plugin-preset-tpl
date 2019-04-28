@@ -9,12 +9,18 @@ module.exports = [
     name: 'lodash',
     type: 'confirm',
     message: 'Use lodash? ',
-    default: false
+    default: true
   },
   {
     name: 'moment',
     type: 'confirm',
     message: 'Use moment? ',
+    default: false
+  },
+  {
+    name: 'vue-echarts',
+    type: 'confirm',
+    message: 'Use vue-echarts? ',
     default: false
   }
 ]
