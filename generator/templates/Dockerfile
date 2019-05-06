@@ -1,7 +1,7 @@
 FROM node:latest
 
 # install simple http server for serving static content
-RUN npm install -g http-server
+RUN npm install -g http-server yarn cgr && cgr use taobao
 
 # make the 'app' folder the current working directory
 WORKDIR /app

@@ -12,7 +12,8 @@ module.exports = (api, options, rootOptions) => {
       'compression-webpack-plugin': '^2.0.0',
     },
     'scripts': {
-      'changelog': 'conventional-changelog -p angular -i src/CHANGELOG.md -s -r 0'
+      'changelog': 'conventional-changelog -p angular -i src/CHANGELOG.md -s -r 0',
+      'docker': 'docker-compose up -d'
     },
     'config': {
       'commitizen': {
